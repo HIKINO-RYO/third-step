@@ -11,6 +11,23 @@ print "英語の平均点は",en_score.mean,"です。\n"
 print "英語の標準偏差は",en_score.stddev,"です。\n"
 print "英語の合計点は",en_score.sum,"です。\n"
 
+sc_ave = sc_score.mean
+sc_std = sc_score.stddev
+print "理科の偏差値は\n"
+
+for i in sc_score.to_a
+	print (50+10*(i-sc_ave)/sc_std).round(1),"\n"
+end
+
+
+en_ave = en_score.mean
+en_std = en_score.stddev
+print "英語の偏差値は\n"
+
+for i in en_score.to_a
+	print (50+10*(i-en_ave)/en_std).round(1),"\n"
+end
+
 print "理科の高い順は\n"
 for i in sc_score.sort.to_a.reverse
     print i,"\n"
